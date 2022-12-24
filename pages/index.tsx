@@ -1,8 +1,7 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import palette from 'common/palette';
+import { Wrapper } from 'common/styles';
 
 export default function Home() {
 	const router = useRouter();
@@ -11,35 +10,28 @@ export default function Home() {
 	};
 
 	return (
-		<HomeSection>
+		<>
 			<EmptySpace />
 			<BottomButton onClick={() => gotoApply()}>비대면 진료 받기</BottomButton>
-		</HomeSection>
+		</>
 	);
 }
-
-const HomeSection = styled.div`
-	display: flex;
-	flex-direction: column;
-	width: 375px;
-	margin: 0 auto;
-`;
 
 const EmptySpace = styled.div`
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: calc(100% - 2rem);
 	height: 500px;
 	background-color: #f5f5f5;
-	margin-bottom: 2rem;
+	margin: 1rem 1rem;
 `;
 
 const BottomButton = styled.button`
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: calc(100% - 2rem);
+	margin: 0 1rem;
 	height: 3rem;
-	padding: 1rem;
 	background-color: ${palette.brand.main};
 	border-radius: 0.5rem;
 	justify-content: center;
