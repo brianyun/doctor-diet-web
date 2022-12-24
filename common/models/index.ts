@@ -7,4 +7,5 @@ export type User = {
 	social_id: string;
 	image_url: string;
 	phone_number: string;
+	imp_uid: string;
 };

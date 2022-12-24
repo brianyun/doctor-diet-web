@@ -1,19 +1,44 @@
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import palette from 'common/palette';
-import { Wrapper } from 'common/styles';
+import { useRecoilState } from 'recoil';
+import { isLoginState } from 'recoil/atoms';
+import { Background, Wrapper } from 'common/styles';
 
 export default function Home() {
 	const router = useRouter();
+	const [isLogin, setIsLogin] = useRecoilState(isLoginState);
+
 	const gotoApply = () => {
+		if (!isLogin) {
+			router.push('/auth');
+		}
 		router.push('/apply');
 	};
 
 	return (
-		<>
-			<EmptySpace />
-			<BottomButton onClick={() => gotoApply()}>비대면 진료 받기</BottomButton>
-		</>
+		<Background>
+			<Wrapper>
+				<EmptySpace />
+				<button
+					onClick={() => {
+						router.push('/auth');
+					}}
+				>
+					auth
+				</button>
+				<button
+					onClick={() => {
+						router.push('/apply');
+					}}
+				>
+					apply
+				</button>
+				<BottomButton onClick={() => gotoApply()}>
+					비대면 진료 받기
+				</BottomButton>
+			</Wrapper>
+		</Background>
 	);
 }
 
