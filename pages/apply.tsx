@@ -6,9 +6,7 @@ import { Background, Wrapper } from 'common/styles';
 export const Apply = () => {
 	return (
 		<Background>
-			<Wrapper>
-				<div>apply</div>
-			</Wrapper>
+			<Wrapper>진료 대기실</Wrapper>
 		</Background>
 	);
 };

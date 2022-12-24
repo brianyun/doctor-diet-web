@@ -40,17 +40,20 @@ export default function Auth() {
 		}
 	};
 
-	useEffect(() => {
-		//로그인
+	const login = () => {
 		setUser({} as User);
 		setIsLogin(true);
+	};
+
+	useEffect(() => {
+		//로그인
+		login();
+		certificateAdult();
 	}, []);
 
 	return (
 		<Background>
-			<Wrapper>
-				<button onClick={certificateAdult}>auth</button>
-			</Wrapper>
+			<Wrapper></Wrapper>
 		</Background>
 	);
 }

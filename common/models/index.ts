@@ -8,4 +8,5 @@ export type User = {
 	image_url: string;
 	phone_number: string;
 	imp_uid: string;
+	address: string;
 };
